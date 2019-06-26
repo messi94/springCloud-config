@@ -4,15 +4,11 @@ spring:
         - dev
 --- 
 server:
-  port: 8005
-mybatis:
-  type-aliases-package: com.yu.study.entities      
-  mapper-locations:
-    - classpath: mybatis/mapper/**/*.xml         
+  port: 8001
 spring:
-  profiles: dev
+    profiles: dev
   application:
-    name: dept                             
+    name: dept                             #对外暴露的为服务名称
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
@@ -24,13 +20,19 @@ spring:
       initial-size: 5
       max-total: 5
       max-wait-millis: 200
+mybatis:
+  #  config-location: classpath:mybatis/mybatis.cfg.xml       #mubatis配置文件所在路径
+  type-aliases-package: com.yu.study.entities      #所有entity别名类所在包
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml         #mapper映射文件
 eureka:
-  client:          
+  client:          #客户端注册近eureka服务列表内
     service-url:
+      #defaultZone: http://localhost:7001/eureka   单机版
       defaultZone: http://eureka7001.com:7001/eureka/
   instance:
     instance-id: dept8001
-    prefer-ip-address: true 
+    prefer-ip-address: true #访问路径可以显示IP地址
 info:
   app.name: yu-cloud-dept8001
   company-name: www.yu.com
