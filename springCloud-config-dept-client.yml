@@ -38,3 +38,4 @@ info:
   company-name: www.yu.com
   build.artifactId: ${project.artifactId}
   build.version: ${project.version}
+---
