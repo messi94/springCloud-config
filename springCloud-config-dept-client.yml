@@ -2,9 +2,9 @@ spring:
     profiles:
         active:
         - dev
----
+--- 
 server:
-  port: 8001
+  port: 8005
 mybatis:
   #  config-location: classpath:mybatis/mybatis.cfg.xml       #mubatis配置文件所在路径
   type-aliases-package: com.yu.study.entities      
@@ -38,9 +38,9 @@ info:
   company-name: www.yu.com
   build.artifactId: ${project.artifactId}
   build.version: ${project.version}
----
+--- 
 server:
-  port: 8001
+  port: 8005
 mybatis:
   #  config-location: classpath:mybatis/mybatis.cfg.xml       #mubatis配置文件所在路径
   type-aliases-package: com.yu.study.entities      
